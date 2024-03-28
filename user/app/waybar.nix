@@ -13,7 +13,7 @@
 
     modules-left = [ "custom/logo" "hyprland/workspaces" ];
 	modules-center = [ "hyprland/window" ];
-    modules-right = [ /* "custom/media" */ "pulseaudio" "clock" ];
+    modules-right = [ "pulseaudio" "clock" ];
     
     "custom/logo" = {
       format = "";
@@ -76,8 +76,5 @@
   	".config/waybar/style.css" = {
 		source = ./waybar/style.css;	
 	};
-	# ".config/waybar/mediaplayer.py" = {
-	# 	source = ./waybar/mediaplayer.py;
-	# };
   };
 }
