@@ -1,0 +1,2 @@
+./buildOS.sh
+./buildHome.sh
