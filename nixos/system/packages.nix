@@ -30,10 +30,13 @@ environment.systemPackages = with pkgs; [
 	clang
 	go
 	python3
-
+	
+	brave
 	
 	nil
 	lua-language-server
-	rust-analyzer
+        rust-analyzer
+
+        discord
   ];
 }

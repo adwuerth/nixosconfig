@@ -1,13 +1,21 @@
-{ config, pkgs, ... }:
 {
-	imports = [
-		./app/zsh.nix
-		./app/kitty.nix
-		./app/waybar.nix
-		./app/rofi.nix
-		./app/git.nix
-		./wm/hyprland.nix
-	];
+  pkgs,
+  lib,
+  inputs,
+  config,
+  ...
+}: {
+  imports = [
+    ./app/zsh.nix
+    ./app/kitty.nix
+    ./app/waybar.nix
+    ./app/rofi.nix
+    ./app/git.nix
+    ./app/nixvim.nix
+
+    ./wm/hyprland.nix
+    # inputs.nixvim.homeManagerModules.nixvim
+  ];
 
   home.username = "adrian";
   home.homeDirectory = "/home/adrian";
@@ -26,22 +34,16 @@
 
   gtk.font.name = "JetBrainsMono Nerd Font";
 
-home.pointerCursor = {
-  gtk.enable = true;
-  package = pkgs.vanilla-dmz;
-  name = "Vanilla-DMZ";
-};
-
-programs = {
-  neovim = {
-    enable = true;
-    vimAlias = true;
-    extraConfig = ''
-    '';
-    plugins = with pkgs.vimPlugins; [
-    ];
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.vanilla-dmz;
+    name = "Vanilla-DMZ";
   };
-};
-  
+
+  programs.eza = {
+    enable = true;
+    icons = true;
+  };
+
   programs.home-manager.enable = true;
 }

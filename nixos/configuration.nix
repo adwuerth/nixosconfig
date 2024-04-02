@@ -1,22 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-	  ./system/boot.nix
-	  ./system/packages.nix
-	  ./system/locale.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./system/boot.nix
+    ./system/packages.nix
+    ./system/locale.nix
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -32,18 +33,19 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+
+    wireplumber.enable = true;
   };
 
   fonts.packages = with pkgs; [
     nerdfonts
   ];
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.adrian = {
     isNormalUser = true;
     description = "adrian";
-    extraGroups = [ "networkmanager" "wheel" "libvirt" "libvirtd" "audio" ];
+    extraGroups = ["networkmanager" "wheel" "libvirt" "libvirtd" "audio"];
     packages = with pkgs; [];
   };
 
@@ -51,10 +53,10 @@
     {
       users = ["adrian"];
       commands = [
-      	{
-	command = "ALL";
-	options = ["NOPASSWD"];
-	}
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
       ];
     }
   ];
@@ -66,29 +68,29 @@
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.libvirtd = {
-  enable = true;
-  qemu = {
-    package = pkgs.qemu_kvm;
-    runAsRoot = true;
-    swtpm.enable = true;
-    ovmf = {
-      enable = true;
-      # packages = [(pkgs.unstable.OVMF.override {
-      #   secureBoot = true;
-      #   tpmSupport = true;
-      # }).fd];
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        # packages = [(pkgs.unstable.OVMF.override {
+        #   secureBoot = true;
+        #   tpmSupport = true;
+        # }).fd];
+      };
     };
   };
-};
 
   programs.nix-ld = {
-	enable = true;
-	libraries = with pkgs; [
-		lua-language-server
-	];
+    enable = true;
+    libraries = with pkgs; [
+      lua-language-server
+    ];
   };
-  
-  environment.shells = with pkgs; [ zsh ];
+
+  environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
@@ -117,7 +119,7 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  
+
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
@@ -141,7 +143,9 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
+
+  networking.enableIPv6 = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -150,5 +154,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
