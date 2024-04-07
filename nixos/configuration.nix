@@ -8,22 +8,15 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./packages.nix
     ./system/boot.nix
-    ./system/packages.nix
     ./system/locale.nix
+    ./system/network.nix
+    ./system/users.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  networking.networkmanager.enable = true;
 
   sound.enable = true;
   security.rtkit.enable = true;
@@ -40,29 +33,6 @@
   fonts.packages = with pkgs; [
     nerdfonts
   ];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.adrian = {
-    isNormalUser = true;
-    description = "adrian";
-    extraGroups = ["networkmanager" "wheel" "libvirt" "libvirtd" "audio"];
-    packages = with pkgs; [];
-  };
-
-  security.sudo.extraRules = [
-    {
-      users = ["adrian"];
-      commands = [
-        {
-          command = "ALL";
-          options = ["NOPASSWD"];
-        }
-      ];
-    }
-  ];
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "adrian";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -135,17 +105,6 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-
-  networking.enableIPv6 = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

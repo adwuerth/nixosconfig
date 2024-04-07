@@ -12,9 +12,7 @@
     ./app/rofi.nix
     ./app/git.nix
     ./app/nixvim.nix
-
-    ./wm/hyprland.nix
-    # inputs.nixvim.homeManagerModules.nixvim
+    ./app/hyprland.nix
   ];
 
   home.username = "adrian";

@@ -25,6 +25,7 @@
       alejandra
       nodePackages.prettier
       prettierd
+      rustfmt
     ];
     plugins = {
       luasnip.enable = true;
