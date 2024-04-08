@@ -17,14 +17,10 @@ window#waybar {
   font-size: 20px;
   margin: 0;
   margin-left: 7px;
-  margin-right: 7px;
+  margin-right: 11px;
   padding: 0;
 }
 
-#workspaces button {
-  color: #ffffff;
-  margin-right: 5px;
-}
 #workspaces button:hover,
 #workspaces button:active {
   background-color: #292828;
@@ -34,19 +30,23 @@ window#waybar {
   background-color: #383737;
 }
 
-#pulseaudio {
-}
-
-#clock {
-}
-
 #clock,
-#workspaces button,
+#cpu,
+#memory,
 #pulseaudio {
   border: 1px solid white;
   border-radius: 20px;
   padding: 0px 10px;
-  margin: 0px 7px;
+  margin: 0px 4px;
+}
+
+#workspaces button {
+  border: 1px solid white;
+  border-radius: 20px;
+  margin: 0px 4px;
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 
 widget {

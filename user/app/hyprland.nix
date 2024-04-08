@@ -32,7 +32,7 @@
       decoration = {
         rounding = 5;
         active_opacity = 1.0;
-        inactive_opacity = 0.9;
+        inactive_opacity = 1.0;
         fullscreen_opacity = 1.0;
         blur = {
           enabled = true;
@@ -125,8 +125,8 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Example special workspace (scratchpad)
-        # "$mainMod, S, togglespecialworkspace, magic"
-        # "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, I, togglespecialworkspace, magic"
+        "$mainMod SHIFT, I, movetoworkspace, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"

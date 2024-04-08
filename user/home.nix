@@ -20,7 +20,16 @@
 
   home.stateVersion = "23.11";
 
-  home.packages = [
+  home.packages = with pkgs; [
+    thunderbird
+    obs-studio
+
+    pavucontrol
+    hyprpicker
+    xdg-utils
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
   ];
 
   home.file = {

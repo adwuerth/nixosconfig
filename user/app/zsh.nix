@@ -6,7 +6,6 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    # syntaxHightlighting.enable = true;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
 

@@ -22,12 +22,18 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    audio.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
 
     wireplumber.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
   };
 
   fonts.packages = with pkgs; [
@@ -76,6 +82,7 @@
     enable = true;
     enableNvidiaPatches = true;
     xwayland.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
   environment.sessionVariables = {
@@ -90,7 +97,16 @@
     driSupport32Bit = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  # Configure keymap in X11
+  services.xserver = {
+    enable = true;
+
+    videoDrivers = ["nvidia"];
+
+    layout = "de";
+    xkbVariant = "";
+    # dpi = 96;
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -100,9 +116,6 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # List services that you want to enable:
 
