@@ -100,7 +100,7 @@
   # Configure keymap in X11
   services.xserver = {
     enable = true;
-
+    displayManager.startx.enable = true;
     videoDrivers = ["nvidia"];
 
     layout = "de";

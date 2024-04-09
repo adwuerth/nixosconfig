@@ -15,7 +15,7 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    colorschemes.dracula.enable = true;
+    # colorschemes.dracula.enable = true;
 
     clipboard.register = "unnamedplus";
     globals = {
@@ -38,6 +38,7 @@
         enable = true;
         iconsEnabled = true;
         globalstatus = true;
+        # theme = "gruvbox";
       };
 
       nix.enable = true;

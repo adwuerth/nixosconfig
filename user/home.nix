@@ -13,6 +13,8 @@
     ./app/git.nix
     ./app/nixvim.nix
     ./app/hyprland.nix
+
+    ./style/stylix.nix
   ];
 
   home.username = "adrian";
@@ -30,7 +32,10 @@
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
+    dunst
   ];
+
+  # home.services.dunst.enable = true;
 
   home.file = {
   };
@@ -39,12 +44,12 @@
     EDITOR = "nvim";
   };
 
-  gtk.font.name = "JetBrainsMono Nerd Font";
+  #gtk.font.name = "JetBrainsMono Nerd Font";
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.vanilla-dmz;
-    name = "Vanilla-DMZ";
+    # package = pkgs.vanilla-dmz;
+    # name = "Vanilla-DMZ";
   };
 
   programs.eza = {

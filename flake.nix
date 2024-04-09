@@ -10,6 +10,8 @@
 
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:danth/stylix/release-23.11";
   };
 
   outputs = {
@@ -18,6 +20,7 @@
     # nixpkgs-unstable,
     home-manager,
     nixvim,
+    stylix,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -40,6 +43,7 @@
           ./user/home.nix
 
           nixvim.homeManagerModules.nixvim
+          stylix.homeManagerModules.stylix
         ];
 
         # extraSpecialArgs = {
