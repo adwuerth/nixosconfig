@@ -16,7 +16,12 @@
     oh-my-zsh = {
       enable = true;
       plugins = ["git"];
-      theme = "norm";
+      theme = "af-magic";
     };
+  };
+
+  programs.eza = {
+    enable = true;
+    icons = true;
   };
 }

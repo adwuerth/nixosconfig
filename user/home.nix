@@ -25,6 +25,7 @@
   home.packages = with pkgs; [
     thunderbird
     obs-studio
+    blender
 
     pavucontrol
     hyprpicker
@@ -50,11 +51,6 @@
     gtk.enable = true;
     # package = pkgs.vanilla-dmz;
     # name = "Vanilla-DMZ";
-  };
-
-  programs.eza = {
-    enable = true;
-    icons = true;
   };
 
   programs.home-manager.enable = true;

@@ -5,7 +5,7 @@
 }: {
   stylix = {
     image = ./wallpaper.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";
     fonts = {
       monospace = {
         package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
