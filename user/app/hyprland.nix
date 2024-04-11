@@ -11,6 +11,10 @@
         "HDMI-A-1, 1920x1080@60, 1920x0, 1"
         "DP-1, 1920x1080@60, 0x0, 1"
       ];
+      workspace = [
+        "2, monitor:HDMI-A-1"
+        "1, monitor:DP-1"
+      ];
       env = "XCURSOR_SIZE,24";
       input = {
         kb_layout = "de";
@@ -85,7 +89,7 @@
       bind = [
         "$mainMod, Q, exec, kitty"
         "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, M, exit,"
         "$mainMod, E, exec, ranger"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, wofi --show drun"
@@ -93,6 +97,7 @@
         "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, W, exec, pkill -SIGUSR1 waybar"
         "$mainMod, S, exec, rofi -show drun -show-icons"
+        "$mainMod, F, swapactiveworkspaces"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -139,6 +144,9 @@
       ];
 
       exec-once = [
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=hyprland"
+        "systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr"
+        "systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr"
         "swww init"
         "swww img ~/Downloads/wallpaper.png"
         "waybar"

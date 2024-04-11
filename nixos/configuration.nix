@@ -33,7 +33,12 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
+    wlr.enable = true;
+    # xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      #xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
   };
 
   fonts.packages = with pkgs; [
@@ -95,6 +100,11 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      # vaapiVdpau
+      # libvdpau-va-gl
+      # nvidia-vaapi-driver
+    ];
   };
 
   # Configure keymap in X11

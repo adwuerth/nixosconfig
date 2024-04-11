@@ -25,11 +25,12 @@
     xclip
     spotify
 
-    brave
-
     lua-language-server
     rust-analyzer
 
-    discord
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
   ];
 }

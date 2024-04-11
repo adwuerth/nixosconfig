@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   inputs,
   config,
@@ -22,19 +23,29 @@
 
   home.stateVersion = "23.11";
 
-  home.packages = with pkgs; [
-    thunderbird
-    obs-studio
-    blender
+  home.packages =
+    (with pkgs; [
+      thunderbird
+      obs-studio
+      # obs-studio-plugins.wlrobs
+      blender
 
-    pavucontrol
-    hyprpicker
-    xdg-utils
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
-    dunst
-  ];
+      pavucontrol
+      hyprpicker
+      xdg-utils
+      xdg-desktop-portal
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      grim
+      slurp
+      wl-clipboard
+      playerctl
+      dunst
+      feh
+    ])
+    ++ (with pkgs-unstable; [
+      # vesktop
+    ]);
 
   # home.services.dunst.enable = true;
 
