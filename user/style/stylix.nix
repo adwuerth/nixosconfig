@@ -29,7 +29,7 @@
     cursor = {
       size = 24;
       package = pkgs.apple-cursor;
-      name = "apple-cursor";
+      name = "macOS-BigSur";
     };
     targets.waybar.enable = false;
   };

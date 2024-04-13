@@ -23,13 +23,14 @@
 
   home.stateVersion = "23.11";
 
+  qt.enable = true;
+
   home.packages =
     (with pkgs; [
       thunderbird
       obs-studio
       # obs-studio-plugins.wlrobs
       blender
-
       pavucontrol
       hyprpicker
       xdg-utils

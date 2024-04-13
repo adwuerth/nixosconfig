@@ -6,6 +6,8 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    xwayland.enable = true;
+    systemd.enable = true;
     settings = {
       monitor = [
         "HDMI-A-1, 1920x1080@60, 1920x0, 1"
@@ -97,7 +99,8 @@
         "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, W, exec, pkill -SIGUSR1 waybar"
         "$mainMod, S, exec, rofi -show drun -show-icons"
-        "$mainMod, F, swapactiveworkspaces"
+        "$mainMod, F, swapactiveworkspaces, DP-1 HDMI-A-1"
+        "$mainMod, T, togglefloating"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -144,9 +147,10 @@
       ];
 
       exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=hyprland"
-        "systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr"
-        "systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr"
+        # "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=hyprland"
+        "dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY"
+        # "systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-hyprland"
+        # "systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-hyprland"
         "swww init"
         "swww img ~/Downloads/wallpaper.png"
         "waybar"

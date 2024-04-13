@@ -28,7 +28,7 @@
     pulse.enable = true;
     jack.enable = true;
 
-    wireplumber.enable = true;
+    # wireplumber.enable = true;
   };
 
   xdg.portal = {
@@ -39,6 +39,15 @@
       #xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
+  };
+
+  services.dbus = {
+    enable = true;
+    packages = [pkgs.dconf];
+  };
+
+  programs.dconf = {
+    enable = true;
   };
 
   fonts.packages = with pkgs; [

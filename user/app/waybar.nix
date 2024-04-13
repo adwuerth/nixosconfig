@@ -30,10 +30,11 @@
         window-rewrite = {
           "class<firefox>" = "";
           "class<thunderbird>" = "";
-          "kitty" = "";
+          "class<kitty>" = "";
           "494d6d0" = "";
           "virt-manager" = "󰢹";
           "rofi" = "󱓞";
+          "class<discord>" = "󰙯";
         };
       };
 
