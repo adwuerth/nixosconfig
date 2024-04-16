@@ -23,6 +23,7 @@
 
   home.stateVersion = "23.11";
 
+  nixpkgs.config.allowUnfree = true;
   qt.enable = true;
 
   home.packages =
@@ -43,6 +44,33 @@
       playerctl
       dunst
       feh
+      wlr-randr
+      neofetch
+
+      kitty
+      spotify
+
+      lua-language-server
+      rust-analyzer
+
+      virt-manager
+      virt-viewer
+      qemu
+      libvirt
+
+      firefox
+
+      waybar
+      swww
+      xclip
+      # rofi-wayland
+
+      ranger
+
+      (pkgs.discord.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
     ])
     ++ (with pkgs-unstable; [
       # vesktop
