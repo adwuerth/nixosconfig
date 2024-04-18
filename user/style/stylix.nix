@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   config,
   ...
 }: {
@@ -8,14 +9,14 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs-unstable.nerdfonts.override {fonts = ["GeistMono"];};
+        name = "GeistMono Nerd Font";
       };
 
       emoji = config.stylix.fonts.monospace;
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans Serif";
+        package = pkgs-unstable.geist-font;
+        name = "Geist Medium";
       };
       sansSerif = config.stylix.fonts.serif;
 
@@ -32,5 +33,6 @@
       name = "macOS-BigSur";
     };
     targets.waybar.enable = false;
+    targets.vscode.enable = false;
   };
 }

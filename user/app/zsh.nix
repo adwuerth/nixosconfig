@@ -11,6 +11,9 @@
 
     shellAliases = {
       ls = "eza -a --icons";
+      "buildhome" = "home-manager switch --flake ~/.dotfiles/";
+      "buildos" = "sudo nixos-rebuild switch --flake ~/.dotfiles/";
+      "buildall" = "buildos; buildhome";
     };
 
     oh-my-zsh = {

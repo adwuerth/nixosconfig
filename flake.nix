@@ -14,19 +14,26 @@
     stylix.url = "github:danth/stylix/release-23.11";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    nixvim,
-    stylix,
-    ...
-  }: let
-    lib = nixpkgs.lib;
+  outputs = inputs @ {self, ...}: let
+    lib = inputs.nixpkgs.lib;
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    # pkgs = nixpkgs.legacyPackages.${system};
+    # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs = import inputs.nixpkgs {
+      system = system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+    pkgs-unstable = import inputs.nixpkgs-unstable {
+      system = system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+    home-manager = inputs.home-manager;
+    nixvim = inputs.nixvim;
+    stylix = inputs.stylix;
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
@@ -34,6 +41,10 @@
         modules = [
           ./system
         ];
+
+        specialArgs = {
+          inherit pkgs-unstable;
+        };
       };
     };
     homeConfigurations = {

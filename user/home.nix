@@ -14,6 +14,7 @@
     ./app/git.nix
     ./app/nixvim.nix
     ./app/hyprland.nix
+    ./app/vscode.nix
 
     ./style/stylix.nix
   ];
@@ -32,47 +33,32 @@
       obs-studio
       # obs-studio-plugins.wlrobs
       blender
-      pavucontrol
-      hyprpicker
-      xdg-utils
-      xdg-desktop-portal
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-      grim
-      slurp
-      wl-clipboard
-      playerctl
-      dunst
-      feh
-      wlr-randr
       neofetch
 
       kitty
       spotify
-
-      lua-language-server
-      rust-analyzer
 
       virt-manager
       virt-viewer
       qemu
       libvirt
 
-      firefox
+      # obsidian
 
-      waybar
-      swww
-      xclip
+      firefox
       # rofi-wayland
 
-      ranger
+      texlive.combined.scheme-basic
 
+      ranger
+      lolcat
       (pkgs.discord.override {
         withOpenASAR = true;
         withVencord = true;
       })
     ])
     ++ (with pkgs-unstable; [
+      # obsidian
       # vesktop
     ]);
 

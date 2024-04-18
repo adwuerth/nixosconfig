@@ -4,6 +4,26 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    pavucontrol
+    hyprpicker
+    xdg-utils
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    grim
+    slurp
+    wl-clipboard
+    playerctl
+    dunst
+    feh
+    wlr-randr
+
+    waybar
+    swww
+    xclip
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

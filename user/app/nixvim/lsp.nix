@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    lua-language-server
+    rust-analyzer
+    nixd
+    nixfmt
+  ];
   programs.nixvim.plugins = {
     lsp = {
       enable = true;

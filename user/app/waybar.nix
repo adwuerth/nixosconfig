@@ -35,18 +35,19 @@
           "virt-manager" = "󰢹";
           "rofi" = "󱓞";
           "class<discord>" = "󰙯";
+          "class<codium-url-handler>" = "";
         };
       };
 
       cpu = {
         interval = 1;
-        format = "{}% ";
+        format = "{}%  ";
         max-length = 10;
       };
 
       memory = {
         interval = 10;
-        format = "{}% ";
+        format = "{}%  ";
         max-length = 10;
       };
 

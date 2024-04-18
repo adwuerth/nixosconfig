@@ -5,6 +5,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [

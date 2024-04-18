@@ -34,6 +34,10 @@
       comment-nvim.enable = true;
       gitsigns.enable = true;
 
+      vimtex = {
+        enable = true;
+      };
+
       lualine = {
         enable = true;
         iconsEnabled = true;
