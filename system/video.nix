@@ -9,14 +9,14 @@
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       # vaapiVdpau
-      # libvdpau-va-gl
+      libvdpau-va-gl
       # nvidia-vaapi-driver
     ];
   };
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;

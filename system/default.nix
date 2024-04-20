@@ -57,6 +57,9 @@
     curl
     git
     home-manager
+
+    # gcc
+    # clang
   ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

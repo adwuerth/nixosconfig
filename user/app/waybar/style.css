@@ -41,12 +41,21 @@ window#waybar {
 }
 
 #clock,
-#cpu,
-#memory,
 #pulseaudio {
   border: 1px solid white;
   border-radius: 20px;
   padding: 0px 10px;
+  margin: 0px 4px;
+}
+
+#cpu,
+#memory {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 15px;
   margin: 0px 4px;
 }
 

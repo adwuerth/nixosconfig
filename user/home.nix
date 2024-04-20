@@ -24,9 +24,7 @@
 
   home.stateVersion = "23.11";
 
-  nixpkgs.config.allowUnfree = true;
   qt.enable = true;
-
   home.packages =
     (with pkgs; [
       thunderbird
@@ -50,6 +48,9 @@
 
       texlive.combined.scheme-basic
 
+      # clang
+      # gcc
+
       ranger
       lolcat
       (pkgs.discord.override {
@@ -58,7 +59,7 @@
       })
     ])
     ++ (with pkgs-unstable; [
-      # obsidian
+      obsidian
       # vesktop
     ]);
 

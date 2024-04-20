@@ -20,13 +20,14 @@
     # pkgs = nixpkgs.legacyPackages.${system};
     # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     pkgs = import inputs.nixpkgs {
-      system = system;
+      inherit system;
       config = {
         allowUnfree = true;
+        permittedInsecurePackages = ["electron-25.9.0"];
       };
     };
     pkgs-unstable = import inputs.nixpkgs-unstable {
-      system = system;
+      inherit system;
       config = {
         allowUnfree = true;
       };

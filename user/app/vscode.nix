@@ -6,11 +6,17 @@
   programs.vscode = {
     enable = true;
     package = pkgs-unstable.vscodium;
-    extensions = with pkgs.vscode-extensions; [
+    mutableExtensionsDir = false;
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+    extensions = with pkgs-unstable.vscode-extensions; [
       vscodevim.vim
       rust-lang.rust-analyzer
       tamasfe.even-better-toml
       jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
+      xaver.clang-format
+      catppuccin.catppuccin-vsc
     ];
     userSettings = {
       editor = {
@@ -18,6 +24,7 @@
         fontFamily = "GeistMono NF Medium";
         formatOnSave = true;
         fontSize = 14;
+        semanticHighlighting.enabled = true;
       };
 
       nix = {
@@ -30,7 +37,7 @@
       };
 
       workbench = {
-        colorTheme = "Monokai";
+        colorTheme = "Catppuccin Mocha";
         fontAliasing = "antialiased";
       };
       rust-analyzer.check.command = "clippy";

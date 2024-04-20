@@ -4,6 +4,7 @@
     rust-analyzer
     nixd
     nixfmt
+    # clangd
   ];
   programs.nixvim.plugins = {
     lsp = {
@@ -14,6 +15,9 @@
           enable = true;
           installCargo = true;
           installRustc = true;
+        };
+        clangd = {
+          enable = true;
         };
       };
     };

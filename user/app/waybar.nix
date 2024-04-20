@@ -31,23 +31,25 @@
           "class<firefox>" = "";
           "class<thunderbird>" = "";
           "class<kitty>" = "";
-          "494d6d0" = "";
+          "class<spotify>" = "";
+          "class<obsidian>" = "󱁉";
           "virt-manager" = "󰢹";
           "rofi" = "󱓞";
           "class<discord>" = "󰙯";
+          "class<VSCodium>" = "";
           "class<codium-url-handler>" = "";
         };
       };
 
       cpu = {
         interval = 1;
-        format = "{}%  ";
+        format = "{}% ";
         max-length = 10;
       };
 
       memory = {
         interval = 10;
-        format = "{}%  ";
+        format = "{}% ";
         max-length = 10;
       };
 
