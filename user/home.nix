@@ -41,6 +41,8 @@
       qemu
       libvirt
 
+      # spotify-tui
+
       # obsidian
 
       firefox

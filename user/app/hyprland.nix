@@ -19,7 +19,6 @@
     feh
     wlr-randr
 
-    waybar
     swww
     xclip
   ];
