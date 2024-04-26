@@ -12,7 +12,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 26;
+        # height = 26;
         # output = [
         #   "eDP-1"
         # ];
@@ -28,7 +28,8 @@
         };
 
         "hyprland/workspaces" = {
-          format = "{icon} -> {windows}";
+          format = "{icon} / {windows}";
+          show-special = true;
           window-rewrite-default = "";
           # format-icons = {
           #   "1" = "";
@@ -46,7 +47,7 @@
             "class<thunderbird>" = "";
             "class<kitty>" = "";
             "class<spotify>" = "";
-            "class<obsidian>" = "󱁉";
+            "class<obsidian>" = "";
             "virt-manager" = "󰢹";
             "rofi" = "󱓞";
             "class<discord>" = "󰙯";
@@ -125,6 +126,7 @@
         + colorize "background" colors.base00
         + colorize "text" colors.base05
         + colorize "logo" colors.base0D
+        + colorize "border" colors.base03
         # + "@define-color abc rgb(from hex(#ffffff) r g b / 0.8);\n"
         + builtins.readFile
         ./waybar/style_new.css;

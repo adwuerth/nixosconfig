@@ -53,16 +53,20 @@
       # clang
       # gcc
 
+      helvum
+      qpwgraph
+      wf-recorder
+
       ranger
       lolcat
-      (pkgs.discord.override {
-        withOpenASAR = true;
-        withVencord = true;
-      })
+      # (pkgs.discord.override {
+      #   withOpenASAR = true;
+      #   withVencord = true;
+      # })
     ])
     ++ (with pkgs-unstable; [
       obsidian
-      # vesktop
+      vesktop
     ]);
 
   # home.services.dunst.enable = true;

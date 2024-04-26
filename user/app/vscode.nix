@@ -17,6 +17,9 @@
       llvm-vs-code-extensions.vscode-clangd
       xaver.clang-format
       catppuccin.catppuccin-vsc
+      jdinhlife.gruvbox
+      usernamehw.errorlens
+      vadimcn.vscode-lldb
     ];
     userSettings = {
       editor = {
@@ -37,7 +40,7 @@
       };
 
       workbench = {
-        colorTheme = "Catppuccin Mocha";
+        colorTheme = "Gruvbox Dark Hard";
         fontAliasing = "antialiased";
       };
       rust-analyzer.check.command = "clippy";

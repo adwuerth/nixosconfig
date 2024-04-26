@@ -4,12 +4,13 @@
   padding: 0;
   /* margin: 0; */
   margin: 1px;
+  margin-bottom: 0px;
   font-size: 14px;
   font-family: GeistMono NF;
 }
 
 window#waybar {
-  background: #292828;
+  /* background: #292828; */
   /* background-color: rgba(50, 50, 50, 0.2); */
   background-color: rgba(0, 0, 0, 0);
   /* background-color: rgba(@background, 0.5); */
@@ -23,7 +24,8 @@ window#waybar {
   margin-left: 7px;
   margin-right: 14px;
   padding: 0;
-  color: @logo;
+  /* color: @logo; */
+  color: @highlight;
 }
 
 /* #workspaces {
@@ -41,7 +43,6 @@ window#waybar {
   /* color: greenyellow; */
 
   color: @highlight;
-  border-bottom: 2px gold;
 }
 
 #workspaces button.focused {
@@ -75,8 +76,9 @@ box.horizontal.modules-right {
 
   /* background-color: rgba(72, 255, 16, 0.2); */
 
+  border: 1px solid @border;
   border-radius: 15px;
-  border-bottom: 1px @highlight;
+  border-bottom: 1px solid @highlight;
   background-color: @background;
 }
 

@@ -5,8 +5,11 @@
   ...
 }: {
   stylix = {
-    image = ./wallpaper.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";
+    # image = ./wallpaper.png;
+    image = ./dock.jpg;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     fonts = {
       monospace = {
         package = pkgs-unstable.nerdfonts.override {fonts = ["GeistMono"];};

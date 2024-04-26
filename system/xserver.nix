@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     (sddm-chili-theme.override {
       themeConfig = {
@@ -7,6 +11,7 @@
         blur = true;
         recursiveBlurLoops = 3;
         recursiveBlurRadius = 5;
+        background = ../user/style/wallpaper.png;
       };
     })
   ];

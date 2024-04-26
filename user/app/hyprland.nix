@@ -8,9 +8,9 @@
     pavucontrol
     hyprpicker
     xdg-utils
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
+    # xdg-desktop-portal
+    # xdg-desktop-portal-gtk
+    # xdg-desktop-portal-hyprland
     grim
     slurp
     wl-clipboard
@@ -29,8 +29,8 @@
     systemd.enable = true;
     settings = {
       monitor = [
-        "HDMI-A-1, 1920x1080@60, 1920x0, 1"
-        "DP-1, 1920x1080@60, 0x0, 1"
+        "HDMI-A-1, 1920x1080@60, 1920x0, 1, bitdepth, 10"
+        "DP-1, 1920x1080@60, 0x0, 1, bitdepth, 10"
       ];
       workspace = [
         "2, monitor:HDMI-A-1"

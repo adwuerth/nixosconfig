@@ -5,7 +5,7 @@
         enable = true;
         snippet.expand = "luasnip";
         mapping = {
-          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-e>" = "cmp.mapping.close()";
           "<C-space>" = "cmp.mapping.complete()";
@@ -13,6 +13,8 @@
             action = "cmp.mapping.confirm({
                                 select = true, behavior = cmp.ConfirmBehavior.Insert })";
           };
+          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' })";
+          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' })";
         };
         window.documentation.border = [
           "╭"
@@ -30,7 +32,7 @@
           # {name = "cmdline";}
           # {name = "path";}
           # {name = "luasnip";}
-          # {name = "buffer";}
+          {name = "buffer";}
         ];
       };
       cmp-buffer.enable = true;
