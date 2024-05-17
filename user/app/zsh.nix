@@ -21,13 +21,13 @@
       buildall = "buildos; buildhome";
       obsidian-ozone = "obsidian --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland";
       codium-ozone = "codium --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      cat = "bat";
+      # cat = "bat";
     };
 
     oh-my-zsh = {
       enable = true;
       plugins = ["git"];
-      theme = "af-magic";
+      theme = "awesomepanda";
     };
   };
 

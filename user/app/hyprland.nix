@@ -29,8 +29,11 @@
     systemd.enable = true;
     settings = {
       monitor = [
-        "HDMI-A-1, 1920x1080@60, 1920x0, 1, bitdepth, 10"
-        "DP-1, 1920x1080@60, 0x0, 1, bitdepth, 10"
+        # "HDMI-A-1, 1920x1080@60, 1920x0, 1, bitdepth, 10"
+        # "DP-1, 1920x1080@60, 0x0, 1, bitdepth, 10"
+
+        "HDMI-A-1, 1920x1080@60, 1920x0, 1"
+        "DP-1, 1920x1080@60, 0x0, 1"
       ];
       workspace = [
         "2, monitor:HDMI-A-1"

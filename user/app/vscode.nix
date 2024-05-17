@@ -20,6 +20,7 @@
       jdinhlife.gruvbox
       usernamehw.errorlens
       vadimcn.vscode-lldb
+      serayuzgur.crates
     ];
     userSettings = {
       editor = {

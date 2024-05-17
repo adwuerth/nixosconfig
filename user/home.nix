@@ -65,6 +65,7 @@
       # })
     ])
     ++ (with pkgs-unstable; [
+      jetbrains.rust-rover
       obsidian
       vesktop
     ]);
