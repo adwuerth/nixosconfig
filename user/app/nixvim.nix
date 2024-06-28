@@ -6,10 +6,10 @@
 }: {
   imports = [
     ./nixvim/format.nix
-    ./nixvim/cmp.nix
+    # ./nixvim/cmp.nix
     ./nixvim/lsp.nix
     ./nixvim/lint.nix
-    ./nixvim/telescope.nix
+    # ./nixvim/telescope.nix
   ];
 
   programs.nixvim = {
@@ -31,7 +31,7 @@
       luasnip.enable = true;
       oil.enable = true;
       treesitter.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       gitsigns.enable = true;
 
       vimtex = {
@@ -47,7 +47,7 @@
 
       nix.enable = true;
     };
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       mouse = "a";

@@ -6,13 +6,15 @@
   home.packages = with pkgs; [
     neofetch
     bat
+    fzf
+    tree
   ];
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
 
     shellAliases = {
       ls = "eza -a --icons";

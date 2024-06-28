@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ config, lib, pkgs, ... }: {
   home.packages = with pkgs; [
     pavucontrol
     hyprpicker
@@ -35,10 +30,7 @@
         "HDMI-A-1, 1920x1080@60, 1920x0, 1"
         "DP-1, 1920x1080@60, 0x0, 1"
       ];
-      workspace = [
-        "2, monitor:HDMI-A-1"
-        "1, monitor:DP-1"
-      ];
+      workspace = [ "2, monitor:HDMI-A-1" "1, monitor:DP-1" ];
       env = "XCURSOR_SIZE,24";
       input = {
         kb_layout = "de";
@@ -92,22 +84,12 @@
         preserve_split = "yes";
       };
 
-      master = {
-        new_is_master = true;
-      };
+      gestures = { workspace_swipe = "off"; };
 
-      gestures = {
-        workspace_swipe = "off";
-      };
-
-      misc = {
-        force_default_wallpaper = 0;
-      };
+      misc = { force_default_wallpaper = 0; };
 
       "$mainMod" = "SUPER";
-      bindr = [
-        "$mainMod, W, exec, pkill -SIGUSR1"
-      ];
+      bindr = [ "$mainMod, W, exec, pkill -SIGUSR1" ];
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [

@@ -18,24 +18,22 @@
 
   services.xserver = {
     enable = true;
-    # displayManager.startx.enable = true;
-
-    displayManager = {
-      startx.enable = false;
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        theme = "chili";
-      };
-      # setupCommands = ''
-      #   wlr-randr --output HDMI-A-1 --off
-      # '';
-    };
 
     videoDrivers = ["nvidia"];
 
-    layout = "de";
-    xkbVariant = "";
-    # dpi = 96;
+    xkb = {
+      layout = "de";
+      variant = "";
+    };
+  };
+
+  services.displayManager = {
+    # startx.enable = false;
+
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "chili";
+    };
   };
 }

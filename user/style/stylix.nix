@@ -5,6 +5,8 @@
   ...
 }: {
   stylix = {
+    enable = true;
+    autoEnable = true;
     # image = ./wallpaper.png;
     image = ./dock.jpg;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";

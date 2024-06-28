@@ -33,6 +33,7 @@
       blender
       neofetch
 
+      libreoffice
       kitty
       spotify
 
@@ -48,7 +49,7 @@
       firefox
       # rofi-wayland
 
-      texlive.combined.scheme-basic
+      texlive.combined.scheme-full
 
       # clang
       # gcc
@@ -56,7 +57,6 @@
       helvum
       qpwgraph
       wf-recorder
-
       ranger
       lolcat
       # (pkgs.discord.override {
@@ -65,6 +65,8 @@
       # })
     ])
     ++ (with pkgs-unstable; [
+      texlivePackages.csquotes
+
       jetbrains.rust-rover
       obsidian
       vesktop
@@ -81,11 +83,13 @@
 
   #gtk.font.name = "JetBrainsMono Nerd Font";
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    # package = pkgs.vanilla-dmz;
-    # name = "Vanilla-DMZ";
-  };
+  # home.pointerCursor = {
+  #   gtk.enable = true;
+  #   # package = pkgs.vanilla-dmz;
+  #   # name = "Vanilla-DMZ";
+  #
+  #   name = "";
+  # };
 
   programs.home-manager.enable = true;
 }

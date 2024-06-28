@@ -21,6 +21,9 @@
       usernamehw.errorlens
       vadimcn.vscode-lldb
       serayuzgur.crates
+      james-yu.latex-workshop
+      github.copilot
+      ms-python.python
     ];
     userSettings = {
       editor = {

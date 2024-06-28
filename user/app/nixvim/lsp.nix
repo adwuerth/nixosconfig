@@ -3,7 +3,7 @@
     lua-language-server
     rust-analyzer
     nixd
-    nixfmt
+    nixfmt-classic
     # clangd
   ];
   programs.nixvim.plugins = {
