@@ -22,7 +22,7 @@
       vadimcn.vscode-lldb
       serayuzgur.crates
       james-yu.latex-workshop
-      github.copilot
+      # github.copilot
       ms-python.python
     ];
     userSettings = {
@@ -32,6 +32,7 @@
         formatOnSave = true;
         fontSize = 14;
         semanticHighlighting.enabled = true;
+        wordWrap = true;
       };
 
       nix = {
@@ -44,7 +45,7 @@
       };
 
       workbench = {
-        colorTheme = "Gruvbox Dark Hard";
+        colorTheme = "Catppuccin Latte";
         fontAliasing = "antialiased";
       };
       rust-analyzer.check.command = "clippy";

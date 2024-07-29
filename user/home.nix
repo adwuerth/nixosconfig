@@ -1,9 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  lib,
-  inputs,
-  config,
   ...
 }: {
   imports = [
@@ -42,17 +39,16 @@
       qemu
       libvirt
 
-      # spotify-tui
-
-      # obsidian
+      zed-editor
 
       firefox
-      # rofi-wayland
 
       texlive.combined.scheme-full
 
-      # clang
-      # gcc
+      imagemagick
+      pdf2svg
+      img2pdf
+      pdftk
 
       helvum
       qpwgraph

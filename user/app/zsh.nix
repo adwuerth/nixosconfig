@@ -23,14 +23,16 @@
       buildall = "buildos; buildhome";
       obsidian-ozone = "obsidian --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland";
       codium-ozone = "codium --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      # cat = "bat";
+      ".." = "cd ..";
+      "gst" = "git status";
+      "ga" = "git add";
+      "gcmsg" = "git commit -m";
+      "gp" = "git push";
     };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-      theme = "awesomepanda";
-    };
+    initExtra = ''
+      PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
+    '';
   };
 
   programs.eza = {
