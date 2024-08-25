@@ -39,14 +39,14 @@ window#waybar {
 
 #workspaces button.hover,
 #workspaces button.active {
-  background-color: #292828;
+  background-color: @background;
   /* color: greenyellow; */
 
   color: @highlight;
 }
 
 #workspaces button.focused {
-  background-color: #585757;
+  background-color: @background;
 }
 
 #workspaces button {

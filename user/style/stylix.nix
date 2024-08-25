@@ -1,20 +1,14 @@
-{
-  pkgs,
-  pkgs-unstable,
-  config,
-  ...
-}: {
+{ pkgs, pkgs-unstable, config, ... }: {
   stylix = {
     enable = true;
     autoEnable = true;
-    # image = ./wallpaper.png;
-    image = ./dock.jpg;
+    image = ./nix-wallpaper-nineish-catppuccin-latte.png;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/solarflare.yaml";
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = ./latte.yaml;
     fonts = {
       monospace = {
-        package = pkgs-unstable.nerdfonts.override {fonts = ["GeistMono"];};
+        package = pkgs-unstable.nerdfonts.override { fonts = [ "GeistMono" ]; };
         name = "GeistMono Nerd Font";
       };
 

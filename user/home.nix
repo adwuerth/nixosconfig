@@ -50,6 +50,10 @@
       img2pdf
       pdftk
 
+      unzip
+
+      zig
+
       helvum
       qpwgraph
       wf-recorder

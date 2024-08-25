@@ -24,6 +24,7 @@
       james-yu.latex-workshop
       # github.copilot
       ms-python.python
+      ziglang.vscode-zig
     ];
     userSettings = {
       editor = {
